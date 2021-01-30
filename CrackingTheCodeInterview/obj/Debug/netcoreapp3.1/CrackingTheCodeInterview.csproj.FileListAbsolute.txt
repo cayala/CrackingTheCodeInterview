@@ -1,0 +1,13 @@
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\bin\Debug\netcoreapp3.1\CrackingTheCodeInterview.exe
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\bin\Debug\netcoreapp3.1\CrackingTheCodeInterview.deps.json
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\bin\Debug\netcoreapp3.1\CrackingTheCodeInterview.runtimeconfig.json
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\bin\Debug\netcoreapp3.1\CrackingTheCodeInterview.runtimeconfig.dev.json
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\bin\Debug\netcoreapp3.1\CrackingTheCodeInterview.dll
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\bin\Debug\netcoreapp3.1\CrackingTheCodeInterview.pdb
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.csprojAssemblyReference.cache
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.AssemblyInfoInputs.cache
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.AssemblyInfo.cs
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.csproj.CoreCompileInputs.cache
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.dll
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.pdb
+C:\Dev\CrackingTheCodeInterview\CrackingTheCodeInterview\obj\Debug\netcoreapp3.1\CrackingTheCodeInterview.genruntimeconfig.cache
