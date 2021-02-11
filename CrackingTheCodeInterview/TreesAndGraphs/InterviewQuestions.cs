@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CrackingTheCodeInterview.DataStructures;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace CrackingTheCodeInterview.TreesAndGraphs
@@ -16,17 +18,42 @@ namespace CrackingTheCodeInterview.TreesAndGraphs
         /*
          Given a sorted (increasing order) array with unique integer elements, write an algorithm to create a binary search tree with minimal height
          */
+
+        public BinaryTreeNode<int> CreateBinarySearchTree(int[] sortedArray)
+        {
+            var treeNode = new MinHeightTreeNode(sortedArray[0], sortedArray);
+
+            return null;
+        }
         #endregion
 
         #region List of Depths
         /*
          Give a binary tree, design an algorithm which creates a linked list of all the nodes at each depth (e.g., if you have a tree with depth D, you'll have D linked lists
          */
+
+        public DataStructures.LinkedList<DataStructures.LinkedList<T>> GetTreeNodesAtEachDepth<T>(TreeNode<T> treeNode, DataStructures.LinkedList<DataStructures.LinkedList<T>> list, int depth) 
+        {
+            if(treeNode.Children == null)
+            {
+                list.GetNodeAt(depth).Data.Add(new DataStructures.LinkedListNode<T>(treeNode.Data));
+                return list;
+            }
+
+            foreach(var child in treeNode.Children)
+            {
+                GetTreeNodesAtEachDepth(child, list, depth + 1);
+            }
+
+            list.GetNodeAt(depth).Data.Add(new DataStructures.LinkedListNode<T>(treeNode.Data));
+            return list;
+        } 
+
         #endregion
 
         #region Check Balanced
         /*
-         Implement a function to check if a binary tree is balanced. For the purposes of theis question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
+         Implement a function to check if a binary tree is balanced. For the purposes of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never differ by more than one.
          */
         #endregion
 
@@ -78,7 +105,7 @@ namespace CrackingTheCodeInterview.TreesAndGraphs
 
         #region Paths with Sum
         /*
-        You are given a binary tree in which each node contains an integer value (which might be positive or vegative).
+        You are given a binary tree in which each node contains an integer value (which might be positive or negative).
         Design an algorithm to count the number of paths that sum to a given value.
         The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).
          */

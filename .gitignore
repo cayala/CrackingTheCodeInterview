@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CrackingCodeInterviewTests/obj/Release/netcoreapp3.1
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/.vs/**
+/CrackingCodeInterviewTests/obj/**
+/CrackingCodeInterviewTests/bin/**
+/CrackingTheCodeInterview/obj/**

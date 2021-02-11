@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
+using System.Reflection.Metadata.Ecma335;
 
 namespace CrackingTheCodeInterview.DataStructures
 {
@@ -21,8 +23,9 @@ namespace CrackingTheCodeInterview.DataStructures
             } 
         }
 
-        public LinkedListNode<T> Head { get; }
+        public LinkedListNode<T> Head { get; set; }
 
+        public LinkedList() { }
         public LinkedList(LinkedListNode<T> head)
             => Head = head;
 
@@ -96,13 +99,34 @@ namespace CrackingTheCodeInterview.DataStructures
     {
         public static void Add<T>(this LinkedList<T> linkedList, LinkedListNode<T> newNode) 
         {
-            var node = linkedList.Head;
-
-            while (node.Next != null) 
+            if (linkedList.Head == null)
+                linkedList.Head = newNode;
+            else
             {
-                node = node.Next;
+                var node = linkedList.Head;
+
+                while (node.Next != null) 
+                {
+                    node = node.Next;
+                }
+                node.Next = newNode;
             }
-            node.Next = newNode;
+        }
+
+        public static void Add<T>(this LinkedList<T> linkedList, T data)
+        {
+            if(linkedList.Head == null)
+                linkedList.Head = new LinkedListNode<T>(data);
+            else
+            {
+                var node = linkedList.Head;
+
+                while (node.Next != null)
+                {
+                    node = node.Next;
+                }
+                node.Next = new LinkedListNode<T>(data);
+            }
         }
 
         public static LinkedList<T> Delete<T>(this LinkedList<T> linkedList, LinkedListNode<T> nodeToDelete)
@@ -152,6 +176,38 @@ namespace CrackingTheCodeInterview.DataStructures
 
             return new LinkedList<T>(linkedList.Head);
         }
+
+        /// <summary>
+        /// This is a zero-based index
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="linkedList"></param>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        public static LinkedListNode<T> GetNodeAt<T>(this LinkedList<T> linkedList, int position)
+        {
+            if (linkedList.IsNullOrEmpty())
+                throw new ArgumentException("Cannot get position from a null or empty list");
+            if (position <= 0)
+                return linkedList.Head;
+            
+            int count = 0;
+            var node = linkedList.Head;
+            LinkedListNode<T> res = null;
+            
+            while(node != null)
+            {
+                if (count == position - 1)
+                    res = node;
+
+                count++;
+                node = node.Next;
+            }
+            return res;
+        }
+
+        public static bool IsNullOrEmpty<T>(this LinkedList<T> linkedList)
+            => linkedList?.Head == null;
     }
 
     public class LinkedListNode<T>
